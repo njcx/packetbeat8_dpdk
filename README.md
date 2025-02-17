@@ -20,36 +20,32 @@ To learn more about Packetbeat, check out <https://www.elastic.co/beats/packetbe
 Please follow the [getting started](https://www.elastic.co/guide/en/beats/packetbeat/current/packetbeat-installation-configuration.html)
 guide from the docs.
 
-## Documentation
 
-Please visit
-[elastic.co](https://www.elastic.co/guide/en/beats/packetbeat/current/index.html) for the
-documentation.
+```bash
 
-## Bugs and feature requests
+dpdk >= DPDK 20.02.1
 
-If you have an issue, please start by opening a topic on the
-[forums](https://discuss.elastic.co/c/beats/packetbeat). We'll help you
-troubleshoot and work with you on a solution.
+kernel >= 3.10.0
 
-If you are sure you found a bug or have a feature request, open an issue on
-[Github](https://github.com/elastic/beats/issues).
+CentOS
+#  yum install -y libpcap-devel gcc gcc-c++ make meson ninja  numactl-devel  numactl  net-tools pciutils
+#  yum install -y kernel-devel-$(uname -r) kernel-headers-$(uname -r)
 
-## Contributions
+Debian + Ubuntu
+# apt install -y libpcap-dev gcc g++ make meson ninja-build libnuma-dev numactl net-tools pciutils
+# apt install -y linux-headers-$(uname -r)
 
-We love contributions from our community! Please read the
-[CONTRIBUTING.md](../CONTRIBUTING.md) file.
 
-## LICENSE NOTICE for Windows users of Packetbeat
+#  wget http://fast.dpdk.org/rel/dpdk-20.11.10.tar.xz
+#  tar -Jxvf dpdk-20.11.10.tar.xz
+#  cd dpdk-stable-20.11.10 && meson build && cd build && ninja && ninja install
+#  export LD_LIBRARY_PATH=/usr/local/lib64:$LD_LIBRARY_PATH
+#  git clone https://github.com/njcx/dpdk-kmods
+#  cd dpdk-kmods && make
+#  modprobe uio  &&  insmod igb_uio.ko
+#  /xxx/dpdk-stable-20.11.10/usertools/dpdk-devbind.py -b igb_uio 0000:03:00.0(pci-)
+#  CGO_CFLAGS="-msse4.2 -fno-strict-aliasing " CGO_LDFLAGS=" -lrte_eal -lrte_mbuf -lrte_mempool -lrte_ethdev -lpcap" go build
 
-The default distribution of Packetbeat for Windows comes bundled with the Npcap
-library. This is not available in the OSS-only distribution of Packetbeat.
 
-**Restrictions on Distribution**
+```
 
-Insecure.Com LLC (“The Nmap Project”) has granted Elasticsearch BV and its
-affiliates the right to include Npcap with this distribution of Packetbeat.
-You may not distribute this version of Packetbeat or any other package from
-Elastic that includes Npcap. If you wish to distribute Npcap, or any package
-that includes Npcap, you should reach out to The Nmap Project to obtain a
-distribution license. See https://nmap.org/npcap/ for more details.
