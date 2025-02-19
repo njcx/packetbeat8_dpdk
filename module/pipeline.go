@@ -25,6 +25,7 @@ import (
 	"path"
 	"path/filepath"
 	"strings"
+	"gopkg.in/yaml.v2"
 
 	"github.com/elastic/elastic-agent-libs/logp"
 	"github.com/joeshaw/multierror"
