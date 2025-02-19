@@ -1,4 +1,4 @@
-module packetbeat8_dpdk
+module github.com/njcx/packetbeat8_dpdk
 
 go 1.23.6
 
