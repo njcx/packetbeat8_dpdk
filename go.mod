@@ -7,7 +7,7 @@ require (
         github.com/elastic/beats/v7 v7.17.27
 	    github.com/elastic/elastic-agent-libs v0.17.4
         github.com/elastic/go-lookslike v1.0.1
-        github.com/elastic/go-sysinfo v1.15.1
+        github.com/elastic/go-sysinfo v1.8.1
         github.com/elastic/go-ucfg v0.8.8
         github.com/elastic/gosigar v0.14.3
         github.com/golang/snappy v0.0.4
