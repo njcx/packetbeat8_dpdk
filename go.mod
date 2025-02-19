@@ -1,7 +1,6 @@
-module pb8_dpdk
+module packetbeat8_dpdk
 
 go 1.23.6
-
 
 
 require (
@@ -76,7 +75,6 @@ require (
         github.com/eapache/go-xerial-snappy v0.0.0-20180814174437-776d5712da21 // indirect
         github.com/eapache/queue v1.1.0 // indirect
         github.com/elastic/elastic-agent-autodiscover v0.9.1 // indirect
-        github.com/elastic/elastic-agent-client/v7 v7.14.0 // indirect
         github.com/elastic/elastic-agent-system-metrics v0.4.4 // indirect
         github.com/elastic/go-concert v0.2.0 // indirect
         github.com/elastic/go-lumber v0.1.0 // indirect
@@ -203,6 +201,11 @@ require (
         sigs.k8s.io/json v0.0.0-20221116044647-bc3834ca7abd // indirect
         sigs.k8s.io/structured-merge-diff/v4 v4.4.1 // indirect
         sigs.k8s.io/yaml v1.3.0 // indirect
+)
+
+
+require (
+        github.com/elastic/elastic-agent-client/v7 v7.14.0 // indirect
 )
 
 replace (
