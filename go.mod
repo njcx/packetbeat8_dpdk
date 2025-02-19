@@ -201,12 +201,9 @@ require (
         sigs.k8s.io/json v0.0.0-20221116044647-bc3834ca7abd // indirect
         sigs.k8s.io/structured-merge-diff/v4 v4.4.1 // indirect
         sigs.k8s.io/yaml v1.3.0 // indirect
-)
-
-
-require (
         github.com/elastic/elastic-agent-client/v7 v7.14.0 // indirect
 )
+
 
 replace (
         github.com/Shopify/sarama => github.com/elastic/sarama v1.19.1-0.20210823122811-11c3ef800752
