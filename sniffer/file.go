@@ -22,9 +22,9 @@ import (
 	"io"
 	"time"
 
-	"github.com/google/gopacket"
-	"github.com/google/gopacket/layers"
-	"github.com/google/gopacket/pcap"
+	"github.com/njcx/gopacket131_dpdk"
+	"github.com/njcx/gopacket131_dpdk/layers"
+	"github.com/njcx/gopacket131_dpdk/pcap"
 
 	"github.com/elastic/elastic-agent-libs/logp"
 )
@@ -65,7 +65,7 @@ func (h *fileHandler) open() error {
 	return nil
 }
 
-func (h *fileHandler) ReadPacketData() ([]byte, gopacket.CaptureInfo, error) {
+func (h *fileHandler) ReadPacketData() ([]byte, gopacket131_dpdk.CaptureInfo, error) {
 	data, ci, err := h.pcapHandle.ReadPacketData()
 	if err != nil {
 		if err != io.EOF { //nolint:errorlint // io.EOF should never be wrapped.

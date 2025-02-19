@@ -21,12 +21,12 @@ import (
 	"encoding/binary"
 	"time"
 
-	"github.com/google/gopacket/layers"
+	"github.com/njcx/gopacket131_dpdk/layers"
 
 	"github.com/elastic/elastic-agent-libs/logp"
 )
 
-// TODO: more types (that are not provided as constants in gopacket)
+// TODO: more types (that are not provided as constants in gopacket131_dpdk)
 
 // ICMPv4 types that represent a response (all other types represent a request)
 var icmp4ResponseTypes = map[uint8]bool{

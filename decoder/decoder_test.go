@@ -23,13 +23,13 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/elastic/beats/v7/packetbeat/flows"
-	"github.com/elastic/beats/v7/packetbeat/protos"
+	"github.com/njcx/packetbeat8_dpdk/flows"
+	"github.com/njcx/packetbeat8_dpdk/protos"
 	"github.com/elastic/elastic-agent-libs/logp"
 
-	"github.com/google/gopacket"
-	"github.com/google/gopacket/layers"
-	"github.com/google/gopacket/pcap"
+	"github.com/njcx/gopacket131_dpdk"
+	"github.com/njcx/gopacket131_dpdk/layers"
+	"github.com/njcx/gopacket131_dpdk/pcap"
 	"github.com/stretchr/testify/assert"
 )
 
@@ -93,7 +93,7 @@ var ipv4TcpDNS = []byte{
 func TestDecodePacketData_ipv4Tcp(t *testing.T) {
 	logp.TestingSetup(logp.WithSelectors("decoder"))
 
-	p := gopacket.NewPacket(ipv4TcpDNS, layers.LinkTypeEthernet, gopacket.Default)
+	p := gopacket131_dpdk.NewPacket(ipv4TcpDNS, layers.LinkTypeEthernet, gopacket131_dpdk.Default)
 	if p.ErrorLayer() != nil {
 		t.Error("Failed to decode packet:", p.ErrorLayer().Error())
 	}
@@ -119,7 +119,7 @@ var ipv4UdpDNS = []byte{
 
 // Test that DecodePacket decodes and IPv4/UDP packet and invokes the UDP processor.
 func TestDecodePacketData_ipv4Udp(t *testing.T) {
-	p := gopacket.NewPacket(ipv4UdpDNS, layers.LinkTypeEthernet, gopacket.Default)
+	p := gopacket131_dpdk.NewPacket(ipv4UdpDNS, layers.LinkTypeEthernet, gopacket131_dpdk.Default)
 	if p.ErrorLayer() != nil {
 		t.Error("Failed to decode packet:", p.ErrorLayer().Error())
 	}
@@ -160,7 +160,7 @@ var ipv6TcpHTTPGet = []byte{
 
 // Test that DecodePacket decodes and IPv6/TCP packet and invokes the TCP processor.
 func TestDecodePacketData_ipv6Tcp(t *testing.T) {
-	p := gopacket.NewPacket(ipv6TcpHTTPGet, layers.LinkTypeEthernet, gopacket.Default)
+	p := gopacket131_dpdk.NewPacket(ipv6TcpHTTPGet, layers.LinkTypeEthernet, gopacket131_dpdk.Default)
 	if p.ErrorLayer() != nil {
 		t.Error("Failed to decode packet: ", p.ErrorLayer().Error())
 	}
@@ -191,7 +191,7 @@ var ipv6UdpDNS = []byte{
 
 // Test that DecodePacket decodes and IPv6/UDP packet and invokes the UDP processor.
 func TestDecodePacketData_ipv6Udp(t *testing.T) {
-	p := gopacket.NewPacket(ipv6UdpDNS, layers.LinkTypeEthernet, gopacket.Default)
+	p := gopacket131_dpdk.NewPacket(ipv6UdpDNS, layers.LinkTypeEthernet, gopacket131_dpdk.Default)
 	if p.ErrorLayer() != nil {
 		t.Error("Failed to decode packet:", p.ErrorLayer().Error())
 	}
@@ -225,8 +225,8 @@ func TestFragment(t *testing.T) {
 		t.Fatalf("failed to open test pcap: %v", err)
 	}
 
-	src := gopacket.NewPacketSource(h, h.LinkType())
-	var packets []gopacket.Packet
+	src := gopacket131_dpdk.NewPacketSource(h, h.LinkType())
+	var packets []gopacket131_dpdk.Packet
 	for p := range src.Packets() {
 		packets = append(packets, p)
 	}

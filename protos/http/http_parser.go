@@ -25,9 +25,9 @@ import (
 	"time"
 	"unicode"
 
-	"github.com/elastic/beats/v7/libbeat/common"
-	"github.com/elastic/beats/v7/libbeat/common/streambuf"
-	"github.com/elastic/beats/v7/packetbeat/protos/tcp"
+	"github.com/njcx/libbeat_v7/common"
+	"github.com/njcx/libbeat_v7/common/streambuf"
+	"github.com/njcx/packetbeat8_dpdk/protos/tcp"
 	"github.com/elastic/elastic-agent-libs/logp"
 )
 

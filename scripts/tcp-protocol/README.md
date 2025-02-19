@@ -107,7 +107,7 @@ Create analyzer skeleton from code generator template.
 ```
 
 Load plugin into packetbeat by running `make update`. Or add `_
-"github.com/elastic/beats/v7/packetbeat/protos/echo"` to the import list in
+"github.com/njcx/packetbeat8_dpdk/protos/echo"` to the import list in
 `$GOPATH/src/github.com/elastic/beats/packetbeat/include/list.go`.
 
 ### 2.2 Standalone beat with protocol analyzer (echo):
@@ -132,8 +132,8 @@ package main
 import (
 	"os"
 
-	"github.com/elastic/beats/v7/libbeat/beat"
-	"github.com/elastic/beats/v7/packetbeat/beater"
+	"github.com/njcx/libbeat_v7/beat"
+	"github.com/njcx/packetbeat8_dpdk/beater"
 
 	// import supported protocol modules
 	_ "github.com/urso/pb_echo/protos/echo"

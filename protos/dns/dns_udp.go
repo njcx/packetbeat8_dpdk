@@ -17,7 +17,7 @@
 
 package dns
 
-import "github.com/elastic/beats/v7/packetbeat/protos"
+import "github.com/njcx/packetbeat8_dpdk/protos"
 
 // Only EDNS packets should have their size beyond this value
 const maxDNSPacketSize = (1 << 9) // 512 (bytes)

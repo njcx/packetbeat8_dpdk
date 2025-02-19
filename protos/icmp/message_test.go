@@ -22,7 +22,7 @@ package icmp
 import (
 	"testing"
 
-	"github.com/google/gopacket/layers"
+	"github.com/njcx/gopacket131_dpdk/layers"
 
 	"github.com/stretchr/testify/assert"
 )

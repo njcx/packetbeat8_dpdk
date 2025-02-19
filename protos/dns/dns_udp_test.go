@@ -19,8 +19,8 @@
 
 // Unit tests and benchmarks for the dns package.
 //
-// The byte array test data was generated from pcap files using the gopacket
-// test_creator.py script contained in the gopacket repository. The script was
+// The byte array test data was generated from pcap files using the gopacket131_dpdk
+// test_creator.py script contained in the gopacket131_dpdk repository. The script was
 // modified to drop the Ethernet, IP, and UDP headers from the byte arrays
 // (skip the first 42 bytes).
 //
@@ -41,8 +41,8 @@ import (
 	mkdns "github.com/miekg/dns"
 	"github.com/stretchr/testify/assert"
 
-	"github.com/elastic/beats/v7/libbeat/common"
-	"github.com/elastic/beats/v7/packetbeat/protos"
+	"github.com/njcx/libbeat_v7/common"
+	"github.com/njcx/packetbeat8_dpdk/protos"
 	"github.com/elastic/elastic-agent-libs/mapstr"
 )
 

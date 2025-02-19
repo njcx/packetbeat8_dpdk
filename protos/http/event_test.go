@@ -21,7 +21,7 @@ import (
 	"reflect"
 	"testing"
 
-	"github.com/elastic/beats/v7/libbeat/ecs"
+	"github.com/njcx/libbeat_v7/ecs"
 )
 
 // TestProtocolFieldsIsInSyncWithECS ensures that Packetbeat's clone of

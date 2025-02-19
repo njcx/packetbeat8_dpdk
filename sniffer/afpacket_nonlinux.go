@@ -22,8 +22,8 @@ package sniffer
 import (
 	"errors"
 
-	"github.com/google/gopacket"
-	"github.com/google/gopacket/layers"
+	"github.com/njcx/gopacket131_dpdk"
+	"github.com/njcx/gopacket131_dpdk/layers"
 )
 
 var errAFPacketLinuxOnly = errors.New("af_packet MMAP sniffing is only available on Linux")
@@ -34,8 +34,8 @@ func newAfpacketHandle(_ afPacketConfig) (*afpacketHandle, error) {
 	return nil, errAFPacketLinuxOnly
 }
 
-func (*afpacketHandle) ReadPacketData() ([]byte, gopacket.CaptureInfo, error) {
-	return nil, gopacket.CaptureInfo{}, errAFPacketLinuxOnly
+func (*afpacketHandle) ReadPacketData() ([]byte, gopacket131_dpdk.CaptureInfo, error) {
+	return nil, gopacket131_dpdk.CaptureInfo{}, errAFPacketLinuxOnly
 }
 
 func (*afpacketHandle) SetBPFFilter(_ string) error {

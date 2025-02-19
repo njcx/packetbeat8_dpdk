@@ -22,7 +22,7 @@ import (
 	"net"
 	"strings"
 
-	"github.com/google/gopacket/routing"
+	"github.com/njcx/gopacket131_dpdk/routing"
 	"golang.org/x/sys/unix"
 )
 
@@ -47,7 +47,7 @@ func Default(af int) (name string, index int, err error) {
 	iface, _, _, err := r.Route(addr)
 	if err != nil {
 		// This is nasty, but the only way we can get this information.
-		// https://github.com/elastic/gopacket/blob/d412fca7f83ac6653ceec11f5276dae3e392a527/routing/routing.go#L153
+		// https://github.com/elastic/gopacket131_dpdk/blob/d412fca7f83ac6653ceec11f5276dae3e392a527/routing/routing.go#L153
 		//
 		// Note also that we should never receive any other error here
 		// since the address we are passing in is guaranteed to be a

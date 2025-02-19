@@ -25,11 +25,11 @@ import (
 	"testing"
 	"time"
 
-	"github.com/google/gopacket/layers"
+	"github.com/njcx/gopacket131_dpdk/layers"
 
-	"github.com/elastic/beats/v7/libbeat/common"
-	"github.com/elastic/beats/v7/packetbeat/procs"
-	"github.com/elastic/beats/v7/packetbeat/protos"
+	"github.com/njcx/libbeat_v7/common"
+	"github.com/njcx/packetbeat8_dpdk/procs"
+	"github.com/njcx/packetbeat8_dpdk/protos"
 	conf "github.com/elastic/elastic-agent-libs/config"
 
 	"github.com/stretchr/testify/assert"

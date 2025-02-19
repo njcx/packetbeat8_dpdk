@@ -23,12 +23,12 @@ import (
 	"sync"
 	"time"
 
-	"github.com/elastic/beats/v7/libbeat/common"
-	"github.com/elastic/beats/v7/libbeat/common/streambuf"
+	"github.com/njcx/libbeat_v7/common"
+	"github.com/njcx/libbeat_v7/common/streambuf"
 	"github.com/elastic/elastic-agent-libs/logp"
 
-	"github.com/elastic/beats/v7/packetbeat/protos"
-	"github.com/elastic/beats/v7/packetbeat/protos/applayer"
+	"github.com/njcx/packetbeat8_dpdk/protos"
+	"github.com/njcx/packetbeat8_dpdk/protos/applayer"
 )
 
 type udpMemcache struct {

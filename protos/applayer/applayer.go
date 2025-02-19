@@ -23,11 +23,11 @@ import (
 	"errors"
 	"time"
 
-	"github.com/elastic/beats/v7/libbeat/beat"
-	"github.com/elastic/beats/v7/libbeat/common"
-	"github.com/elastic/beats/v7/libbeat/common/streambuf"
+	"github.com/njcx/libbeat_v7/beat"
+	"github.com/njcx/libbeat_v7/common"
+	"github.com/njcx/libbeat_v7/common/streambuf"
 
-	"github.com/elastic/beats/v7/packetbeat/pb"
+	"github.com/njcx/packetbeat8_dpdk/pb"
 )
 
 // A Message its direction indicator

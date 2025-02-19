@@ -24,19 +24,19 @@ import (
 
 	"github.com/mitchellh/hashstructure"
 
-	"github.com/elastic/beats/v7/libbeat/beat"
-	"github.com/elastic/beats/v7/libbeat/cfgfile"
-	"github.com/elastic/beats/v7/libbeat/processors"
-	"github.com/elastic/beats/v7/libbeat/publisher/pipeline"
+	"github.com/njcx/libbeat_v7/beat"
+	"github.com/njcx/libbeat_v7/cfgfile"
+	"github.com/njcx/libbeat_v7/processors"
+	"github.com/njcx/libbeat_v7/publisher/pipeline"
 	"github.com/elastic/elastic-agent-libs/logp"
 	"github.com/elastic/elastic-agent-libs/mapstr"
 
-	"github.com/elastic/beats/v7/packetbeat/config"
-	"github.com/elastic/beats/v7/packetbeat/flows"
-	"github.com/elastic/beats/v7/packetbeat/procs"
-	"github.com/elastic/beats/v7/packetbeat/protos"
-	"github.com/elastic/beats/v7/packetbeat/publish"
-	"github.com/elastic/beats/v7/packetbeat/sniffer"
+	"github.com/njcx/packetbeat8_dpdk/config"
+	"github.com/njcx/packetbeat8_dpdk/flows"
+	"github.com/njcx/packetbeat8_dpdk/procs"
+	"github.com/njcx/packetbeat8_dpdk/protos"
+	"github.com/njcx/packetbeat8_dpdk/publish"
+	"github.com/njcx/packetbeat8_dpdk/sniffer"
 	conf "github.com/elastic/elastic-agent-libs/config"
 )
 

@@ -20,8 +20,8 @@ package beater
 import (
 	"testing"
 
-	"github.com/elastic/beats/v7/libbeat/beat"
-	"github.com/elastic/beats/v7/libbeat/management"
+	"github.com/njcx/libbeat_v7/beat"
+	"github.com/njcx/libbeat_v7/management"
 	"github.com/elastic/elastic-agent-libs/config"
 	"github.com/elastic/elastic-agent-libs/logp"
 )

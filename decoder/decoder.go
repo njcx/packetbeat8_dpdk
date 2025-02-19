@@ -22,21 +22,21 @@ import (
 	"sort"
 	"time"
 
-	"github.com/google/gopacket"
-	"github.com/google/gopacket/layers"
+	"github.com/njcx/gopacket131_dpdk"
+	"github.com/njcx/gopacket131_dpdk/layers"
 
-	"github.com/elastic/beats/v7/packetbeat/flows"
-	"github.com/elastic/beats/v7/packetbeat/protos"
-	"github.com/elastic/beats/v7/packetbeat/protos/icmp"
-	"github.com/elastic/beats/v7/packetbeat/protos/tcp"
-	"github.com/elastic/beats/v7/packetbeat/protos/udp"
+	"github.com/njcx/packetbeat8_dpdk/flows"
+	"github.com/njcx/packetbeat8_dpdk/protos"
+	"github.com/njcx/packetbeat8_dpdk/protos/icmp"
+	"github.com/njcx/packetbeat8_dpdk/protos/tcp"
+	"github.com/njcx/packetbeat8_dpdk/protos/udp"
 	"github.com/elastic/elastic-agent-libs/logp"
 )
 
 type Decoder struct {
-	decoders         map[gopacket.LayerType]gopacket.DecodingLayer
-	linkLayerDecoder gopacket.DecodingLayer
-	linkLayerType    gopacket.LayerType
+	decoders         map[gopacket131_dpdk.LayerType]gopacket131_dpdk.DecodingLayer
+	linkLayerDecoder gopacket131_dpdk.DecodingLayer
+	linkLayerType    gopacket131_dpdk.LayerType
 
 	sll       layers.LinuxSLL
 	lo        layers.Loopback
@@ -83,7 +83,7 @@ const (
 func New(f *flows.Flows, datalink layers.LinkType, icmp4 icmp.ICMPv4Processor, icmp6 icmp.ICMPv6Processor, tcp tcp.Processor, udp udp.Processor) (*Decoder, error) {
 	d := Decoder{
 		flows:     f,
-		decoders:  make(map[gopacket.LayerType]gopacket.DecodingLayer),
+		decoders:  make(map[gopacket131_dpdk.LayerType]gopacket131_dpdk.DecodingLayer),
 		icmp4Proc: icmp4, icmp6Proc: icmp6, tcpProc: tcp, udpProc: udp,
 		fragments: fragmentCache{collected: make(map[uint16]fragments)},
 		logger:    logp.NewLogger("decoder"),
@@ -114,7 +114,7 @@ func New(f *flows.Flows, datalink layers.LinkType, icmp4 icmp.ICMPv4Processor, i
 		d.flowID = &flows.FlowID{}
 	}
 
-	d.AddLayers([]gopacket.DecodingLayer{
+	d.AddLayers([]gopacket131_dpdk.DecodingLayer{
 		&d.sll,             // LinuxSLL
 		&d.eth,             // Ethernet
 		&d.lo,              // loopback on OS X
@@ -147,19 +147,19 @@ func (d *Decoder) SetTruncated() {
 	d.truncated = true
 }
 
-func (d *Decoder) AddLayer(layer gopacket.DecodingLayer) {
+func (d *Decoder) AddLayer(layer gopacket131_dpdk.DecodingLayer) {
 	for _, typ := range layer.CanDecode().LayerTypes() {
 		d.decoders[typ] = layer
 	}
 }
 
-func (d *Decoder) AddLayers(layers []gopacket.DecodingLayer) {
+func (d *Decoder) AddLayers(layers []gopacket131_dpdk.DecodingLayer) {
 	for _, layer := range layers {
 		d.AddLayer(layer)
 	}
 }
 
-func (d *Decoder) OnPacket(data []byte, ci *gopacket.CaptureInfo) {
+func (d *Decoder) OnPacket(data []byte, ci *gopacket131_dpdk.CaptureInfo) {
 	d.truncated = false
 
 	current := d.linkLayerDecoder
@@ -189,7 +189,7 @@ func (d *Decoder) OnPacket(data []byte, ci *gopacket.CaptureInfo) {
 
 		nextType := current.NextLayerType()
 		data = current.LayerPayload()
-		if nextType == gopacket.LayerTypeFragment {
+		if nextType == gopacket131_dpdk.LayerTypeFragment {
 			ipv4, ok := ipv4Layer(current)
 			if !ok {
 				// This should never happen. Log the issue and attempt to continue.
@@ -365,7 +365,7 @@ type fragment struct {
 	expire time.Time
 }
 
-func (d *Decoder) process(packet *protos.Packet, layerType gopacket.LayerType) (done bool) {
+func (d *Decoder) process(packet *protos.Packet, layerType gopacket131_dpdk.LayerType) (done bool) {
 	withFlow := d.flowID != nil
 
 	switch layerType {
@@ -451,10 +451,10 @@ func (d *Decoder) onICMPv6(packet *protos.Packet) {
 	}
 
 	if d.icmp6Proc != nil {
-		// google/gopacket treats the first four bytes
+		// google/gopacket131_dpdk treats the first four bytes
 		// after the typo, code and checksum as part of
 		// the payload. So drop those bytes.
-		// See https://github.com/google/gopacket/pull/423/
+		// See https://github.com/njcx/gopacket131_dpdk/pull/423/
 		d.icmp6.Payload = d.icmp6.Payload[4:]
 		packet.Payload = d.icmp6.Payload
 		packet.Tuple.ComputeHashables()

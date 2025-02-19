@@ -18,14 +18,14 @@
 package decoder
 
 import (
-	"github.com/google/gopacket"
-	"github.com/google/gopacket/layers"
+	"github.com/njcx/gopacket131_dpdk"
+	"github.com/njcx/gopacket131_dpdk/layers"
 )
 
 // implement DecodingLayer with support of switching between multiple layers to
 // remember outer layer results
 type multiLayer struct {
-	layers []gopacket.DecodingLayer // all layers must have same type
+	layers []gopacket131_dpdk.DecodingLayer // all layers must have same type
 	i      int
 	cnt    int
 }
@@ -38,23 +38,23 @@ func (m *multiLayer) next() {
 	}
 }
 
-func (m *multiLayer) current() gopacket.DecodingLayer {
+func (m *multiLayer) current() gopacket131_dpdk.DecodingLayer {
 	return m.layers[m.i]
 }
 
-func (m *multiLayer) init(layer ...gopacket.DecodingLayer) {
+func (m *multiLayer) init(layer ...gopacket131_dpdk.DecodingLayer) {
 	m.layers = layer
 }
 
-func (m *multiLayer) DecodeFromBytes(data []byte, df gopacket.DecodeFeedback) error {
+func (m *multiLayer) DecodeFromBytes(data []byte, df gopacket131_dpdk.DecodeFeedback) error {
 	return m.layers[m.i].DecodeFromBytes(data, df)
 }
 
-func (m *multiLayer) CanDecode() gopacket.LayerClass {
+func (m *multiLayer) CanDecode() gopacket131_dpdk.LayerClass {
 	return m.layers[m.i].CanDecode()
 }
 
-func (m *multiLayer) NextLayerType() gopacket.LayerType {
+func (m *multiLayer) NextLayerType() gopacket131_dpdk.LayerType {
 	return m.layers[m.i].NextLayerType()
 }
 
@@ -62,7 +62,7 @@ func (m *multiLayer) LayerPayload() []byte {
 	return m.layers[m.i].LayerPayload()
 }
 
-func ipv4Layer(l gopacket.DecodingLayer) (ipv4 *layers.IPv4, ok bool) {
+func ipv4Layer(l gopacket131_dpdk.DecodingLayer) (ipv4 *layers.IPv4, ok bool) {
 	for maxDepth := 1000; maxDepth > 0; maxDepth-- {
 		switch d := l.(type) {
 		case *layers.IPv4:

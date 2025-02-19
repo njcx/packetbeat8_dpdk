@@ -24,15 +24,15 @@ import (
 	"net"
 	"testing"
 
-	"github.com/google/gopacket"
-	"github.com/google/gopacket/layers"
+	"github.com/njcx/gopacket131_dpdk"
+	"github.com/njcx/gopacket131_dpdk/layers"
 
-	"github.com/elastic/beats/v7/libbeat/beat"
+	"github.com/njcx/libbeat_v7/beat"
 	conf "github.com/elastic/elastic-agent-libs/config"
 	"github.com/elastic/elastic-agent-libs/logp"
 
-	"github.com/elastic/beats/v7/packetbeat/procs"
-	"github.com/elastic/beats/v7/packetbeat/protos"
+	"github.com/njcx/packetbeat8_dpdk/procs"
+	"github.com/njcx/packetbeat8_dpdk/protos"
 
 	"github.com/stretchr/testify/assert"
 )
@@ -88,7 +88,7 @@ func createICMPv4Layer(b *testing.B, hexstr string) *layers.ICMPv4 {
 		return nil
 	}
 
-	var df gopacket.DecodeFeedback
+	var df gopacket131_dpdk.DecodeFeedback
 	var icmp4 layers.ICMPv4
 	err = icmp4.DecodeFromBytes(data, df)
 	if err != nil {

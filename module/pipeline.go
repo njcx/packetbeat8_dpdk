@@ -30,8 +30,8 @@ import (
 	"gopkg.in/yaml.v2"
 
 	"github.com/elastic/beats/v7/filebeat/fileset"
-	"github.com/elastic/beats/v7/libbeat/beat"
-	"github.com/elastic/beats/v7/libbeat/esleg/eslegclient"
+	"github.com/njcx/libbeat_v7/beat"
+	"github.com/njcx/libbeat_v7/esleg/eslegclient"
 	"github.com/elastic/elastic-agent-libs/logp"
 )
 

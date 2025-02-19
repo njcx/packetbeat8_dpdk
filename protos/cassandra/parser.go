@@ -21,11 +21,11 @@ import (
 	"errors"
 	"time"
 
-	"github.com/elastic/beats/v7/libbeat/common/streambuf"
-	"github.com/elastic/beats/v7/packetbeat/protos/applayer"
+	"github.com/njcx/libbeat_v7/common/streambuf"
+	"github.com/njcx/packetbeat8_dpdk/protos/applayer"
 	"github.com/elastic/elastic-agent-libs/logp"
 
-	gocql "github.com/elastic/beats/v7/packetbeat/protos/cassandra/internal/gocql"
+	gocql "github.com/njcx/packetbeat8_dpdk/protos/cassandra/internal/gocql"
 )
 
 type parser struct {

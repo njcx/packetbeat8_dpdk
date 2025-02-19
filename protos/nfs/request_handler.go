@@ -23,12 +23,12 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/elastic/beats/v7/libbeat/common"
+	"github.com/njcx/libbeat_v7/common"
 	"github.com/elastic/elastic-agent-libs/mapstr"
 	"github.com/elastic/elastic-agent-libs/monitoring"
 
-	"github.com/elastic/beats/v7/packetbeat/pb"
-	"github.com/elastic/beats/v7/packetbeat/protos/tcp"
+	"github.com/njcx/packetbeat8_dpdk/pb"
+	"github.com/njcx/packetbeat8_dpdk/protos/tcp"
 )
 
 const nfsProgramNumber = 100003

@@ -27,7 +27,7 @@ import (
 	"runtime"
 	"strings"
 
-	"github.com/google/gopacket/pcap"
+	"github.com/njcx/gopacket131_dpdk/pcap"
 	"golang.org/x/mod/semver"
 
 	"github.com/elastic/elastic-agent-libs/logp"

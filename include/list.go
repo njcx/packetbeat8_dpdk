@@ -21,24 +21,24 @@ package include
 
 import (
 	// Import packages to perform 'func InitializeModule()' when in-use.
-	m0 "github.com/elastic/beats/v7/packetbeat/processor/add_kubernetes_metadata"
+	m0 "github.com/njcx/packetbeat8_dpdk/processor/add_kubernetes_metadata"
 
 	// Import packages that perform 'func init()'.
-	_ "github.com/elastic/beats/v7/packetbeat/protos/amqp"
-	_ "github.com/elastic/beats/v7/packetbeat/protos/cassandra"
-	_ "github.com/elastic/beats/v7/packetbeat/protos/dhcpv4"
-	_ "github.com/elastic/beats/v7/packetbeat/protos/dns"
-	_ "github.com/elastic/beats/v7/packetbeat/protos/http"
-	_ "github.com/elastic/beats/v7/packetbeat/protos/icmp"
-	_ "github.com/elastic/beats/v7/packetbeat/protos/memcache"
-	_ "github.com/elastic/beats/v7/packetbeat/protos/mongodb"
-	_ "github.com/elastic/beats/v7/packetbeat/protos/mysql"
-	_ "github.com/elastic/beats/v7/packetbeat/protos/nfs"
-	_ "github.com/elastic/beats/v7/packetbeat/protos/pgsql"
-	_ "github.com/elastic/beats/v7/packetbeat/protos/redis"
-	_ "github.com/elastic/beats/v7/packetbeat/protos/sip"
-	_ "github.com/elastic/beats/v7/packetbeat/protos/thrift"
-	_ "github.com/elastic/beats/v7/packetbeat/protos/tls"
+	_ "github.com/njcx/packetbeat8_dpdk/protos/amqp"
+	_ "github.com/njcx/packetbeat8_dpdk/protos/cassandra"
+	_ "github.com/njcx/packetbeat8_dpdk/protos/dhcpv4"
+	_ "github.com/njcx/packetbeat8_dpdk/protos/dns"
+	_ "github.com/njcx/packetbeat8_dpdk/protos/http"
+	_ "github.com/njcx/packetbeat8_dpdk/protos/icmp"
+	_ "github.com/njcx/packetbeat8_dpdk/protos/memcache"
+	_ "github.com/njcx/packetbeat8_dpdk/protos/mongodb"
+	_ "github.com/njcx/packetbeat8_dpdk/protos/mysql"
+	_ "github.com/njcx/packetbeat8_dpdk/protos/nfs"
+	_ "github.com/njcx/packetbeat8_dpdk/protos/pgsql"
+	_ "github.com/njcx/packetbeat8_dpdk/protos/redis"
+	_ "github.com/njcx/packetbeat8_dpdk/protos/sip"
+	_ "github.com/njcx/packetbeat8_dpdk/protos/thrift"
+	_ "github.com/njcx/packetbeat8_dpdk/protos/tls"
 )
 
 // InitializeModules initialize all of the modules.

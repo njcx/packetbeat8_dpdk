@@ -25,9 +25,9 @@ import (
 	"sync"
 	"syscall"
 
-	"github.com/google/gopacket/pcap"
+	"github.com/njcx/gopacket131_dpdk/pcap"
 
-	"github.com/elastic/beats/v7/packetbeat/route"
+	"github.com/njcx/packetbeat8_dpdk/route"
 	"github.com/elastic/elastic-agent-libs/logp"
 	"github.com/elastic/elastic-agent-libs/monitoring"
 )

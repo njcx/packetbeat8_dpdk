@@ -20,8 +20,8 @@ package protocols
 import (
 	"errors"
 
-	"github.com/elastic/beats/v7/libbeat/plugin"
-	"github.com/elastic/beats/v7/packetbeat/protos"
+	"github.com/njcx/libbeat_v7/plugin"
+	"github.com/njcx/packetbeat8_dpdk/protos"
 )
 
 type protocolPlugin struct {

@@ -27,8 +27,8 @@ import (
 	"sync"
 	"time"
 
-	"github.com/elastic/beats/v7/libbeat/beat"
-	"github.com/elastic/beats/v7/packetbeat/npcap"
+	"github.com/njcx/libbeat_v7/beat"
+	"github.com/njcx/packetbeat8_dpdk/npcap"
 	conf "github.com/elastic/elastic-agent-libs/config"
 	"github.com/elastic/elastic-agent-libs/logp"
 )

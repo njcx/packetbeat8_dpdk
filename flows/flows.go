@@ -20,9 +20,9 @@ package flows
 import (
 	"time"
 
-	"github.com/elastic/beats/v7/libbeat/beat"
-	"github.com/elastic/beats/v7/packetbeat/config"
-	"github.com/elastic/beats/v7/packetbeat/procs"
+	"github.com/njcx/libbeat_v7/beat"
+	"github.com/njcx/packetbeat8_dpdk/config"
+	"github.com/njcx/packetbeat8_dpdk/procs"
 	"github.com/elastic/elastic-agent-libs/logp"
 )
 

@@ -24,7 +24,7 @@ package memcache
 // init function.
 
 import (
-	"github.com/elastic/beats/v7/libbeat/common/streambuf"
+	"github.com/njcx/libbeat_v7/common/streambuf"
 	"github.com/elastic/elastic-agent-libs/mapstr"
 )
 

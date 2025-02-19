@@ -19,7 +19,7 @@
 
 package npcap
 
-import "github.com/google/gopacket/pcap"
+import "github.com/njcx/gopacket131_dpdk/pcap"
 
 func loadWinPCAP() error { return pcap.LoadWinPCAP() }
 

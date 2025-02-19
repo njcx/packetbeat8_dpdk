@@ -23,9 +23,9 @@ import (
 	"flag"
 	"testing"
 
-	"github.com/elastic/beats/v7/libbeat/cfgfile"
-	"github.com/elastic/beats/v7/libbeat/tests/system/template"
-	"github.com/elastic/beats/v7/packetbeat/cmd"
+	"github.com/njcx/libbeat_v7/cfgfile"
+	"github.com/njcx/libbeat_v7/tests/system/template"
+	"github.com/njcx/packetbeat8_dpdk/cmd"
 )
 
 var systemTest *bool

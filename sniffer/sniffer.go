@@ -27,17 +27,17 @@ import (
 	"strings"
 	"time"
 
-	"github.com/google/gopacket"
-	"github.com/google/gopacket/layers"
-	"github.com/google/gopacket/pcap"
-	"github.com/google/gopacket/pcapgo"
+	"github.com/njcx/gopacket131_dpdk"
+	"github.com/njcx/gopacket131_dpdk/layers"
+	"github.com/njcx/gopacket131_dpdk/pcap"
+	"github.com/njcx/gopacket131_dpdk/pcapgo"
 	"golang.org/x/sync/errgroup"
 
-	"github.com/elastic/beats/v7/libbeat/common/atomic"
+	"github.com/njcx/libbeat_v7/common/atomic"
 	"github.com/elastic/elastic-agent-libs/logp"
 
-	"github.com/elastic/beats/v7/packetbeat/config"
-	"github.com/elastic/beats/v7/packetbeat/decoder"
+	"github.com/njcx/packetbeat8_dpdk/config"
+	"github.com/njcx/packetbeat8_dpdk/decoder"
 )
 
 // Sniffer provides packet sniffing capabilities, forwarding packets read
@@ -74,7 +74,7 @@ type sniffer struct {
 }
 
 type snifferHandle interface {
-	gopacket.PacketDataSource
+	gopacket131_dpdk.PacketDataSource
 	LinkType() layers.LinkType
 	Close()
 }

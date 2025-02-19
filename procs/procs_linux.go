@@ -32,7 +32,7 @@ import (
 	"strings"
 	"sync"
 
-	"github.com/elastic/beats/v7/packetbeat/protos/applayer"
+	"github.com/njcx/packetbeat8_dpdk/protos/applayer"
 	"github.com/elastic/elastic-agent-libs/logp"
 	"github.com/elastic/go-sysinfo/types"
 	"github.com/elastic/gosigar"

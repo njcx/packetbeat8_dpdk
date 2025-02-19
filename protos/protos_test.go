@@ -23,7 +23,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/elastic/beats/v7/libbeat/common"
+	"github.com/njcx/libbeat_v7/common"
 	conf "github.com/elastic/elastic-agent-libs/config"
 	"github.com/elastic/go-ucfg"
 

@@ -26,8 +26,8 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"github.com/elastic/beats/v7/libbeat/common"
-	"github.com/elastic/beats/v7/packetbeat/procs"
+	"github.com/njcx/libbeat_v7/common"
+	"github.com/njcx/packetbeat8_dpdk/procs"
 	"github.com/elastic/elastic-agent-libs/logp"
 	"github.com/elastic/go-lookslike"
 	"github.com/elastic/go-lookslike/isdef"

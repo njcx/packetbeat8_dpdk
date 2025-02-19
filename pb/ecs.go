@@ -18,7 +18,7 @@
 package pb
 
 import (
-	"github.com/elastic/beats/v7/libbeat/ecs"
+	"github.com/njcx/libbeat_v7/ecs"
 )
 
 type ecsRelated struct {

@@ -20,7 +20,7 @@ package icmp
 import (
 	"time"
 
-	"github.com/elastic/beats/v7/packetbeat/protos"
+	"github.com/njcx/packetbeat8_dpdk/protos"
 )
 
 type icmpConfig struct {

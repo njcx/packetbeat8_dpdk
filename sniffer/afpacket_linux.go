@@ -25,13 +25,13 @@ import (
 	"time"
 	"unsafe"
 
-	"github.com/google/gopacket"
-	"github.com/google/gopacket/afpacket"
-	"github.com/google/gopacket/layers"
-	"github.com/google/gopacket/pcap"
+	"github.com/njcx/gopacket131_dpdk"
+	"github.com/njcx/gopacket131_dpdk/afpacket"
+	"github.com/njcx/gopacket131_dpdk/layers"
+	"github.com/njcx/gopacket131_dpdk/pcap"
 	"golang.org/x/net/bpf"
 
-	"github.com/elastic/beats/v7/libbeat/monitoring/inputmon"
+	"github.com/njcx/libbeat_v7/monitoring/inputmon"
 	"github.com/elastic/elastic-agent-libs/logp"
 	"github.com/elastic/elastic-agent-libs/monitoring"
 )
@@ -103,7 +103,7 @@ func newAfpacketHandle(c afPacketConfig) (*afpacketHandle, error) {
 	return h, nil
 }
 
-func (h *afpacketHandle) ReadPacketData() (data []byte, ci gopacket.CaptureInfo, err error) {
+func (h *afpacketHandle) ReadPacketData() (data []byte, ci gopacket131_dpdk.CaptureInfo, err error) {
 	return h.TPacket.ReadPacketData()
 }
 
