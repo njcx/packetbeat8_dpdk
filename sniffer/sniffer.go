@@ -24,17 +24,19 @@ import (
 	"io"
 	"os"
 	"runtime"
+	"strconv"
 	"strings"
 	"time"
 
 	"github.com/njcx/gopacket131_dpdk"
+	"github.com/njcx/gopacket131_dpdk/dpdk"
 	"github.com/njcx/gopacket131_dpdk/layers"
 	"github.com/njcx/gopacket131_dpdk/pcap"
 	"github.com/njcx/gopacket131_dpdk/pcapgo"
 	"golang.org/x/sync/errgroup"
 
-	"github.com/njcx/libbeat_v7/common/atomic"
 	"github.com/elastic/elastic-agent-libs/logp"
+	"github.com/njcx/libbeat_v7/common/atomic"
 
 	"github.com/njcx/packetbeat8_dpdk/config"
 	"github.com/njcx/packetbeat8_dpdk/decoder"
@@ -179,6 +181,8 @@ func validateConfig(filter string, cfg *config.InterfaceConfig) error {
 
 	switch cfg.Type {
 	case "pcap":
+		return nil
+	case "dpdk":
 		return nil
 	case "af_packet":
 		return validateAfPacketConfig(cfg)
@@ -472,9 +476,32 @@ func (s *sniffer) open(device string) (snifferHandle, error) {
 		return openPcap(device, s.filter, &s.config)
 	case "af_packet":
 		return openAFPacket(fmt.Sprintf("%s_%d", s.id, s.idx), device, s.filter, &s.config)
+
+	case "dpdk":
+		return openDpdk(device, s.filter)
 	default:
 		return nil, fmt.Errorf("unknown sniffer type for %s: %q", device, s.config.Type)
 	}
+}
+
+func openDpdk(device, filter string) (snifferHandle, error) {
+
+	err := dpdk.InitDPDK()
+	if err != nil {
+		return nil, err
+	}
+
+	num16, _ := strconv.ParseUint(device, 10, 16)
+	port := uint16(num16)
+
+	h, err := dpdk.NewDPDKHandle(port, filter)
+
+	if err != nil {
+		h.Close()
+		return nil, err
+	}
+
+	return h, nil
 }
 
 // Stop marks a sniffer as stopped. The Run method will return once the stop
