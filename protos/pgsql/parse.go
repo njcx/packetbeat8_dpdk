@@ -21,7 +21,7 @@ import (
 	"errors"
 	"strings"
 
-	"github.com/njcx/libbeat_v7/common"
+	"github.com/njcx/libbeat_v8/common"
 )
 
 var (

@@ -34,7 +34,7 @@ import (
 	mkdns "github.com/miekg/dns"
 	"golang.org/x/net/publicsuffix"
 
-	"github.com/njcx/libbeat_v7/common"
+	"github.com/njcx/libbeat_v8/common"
 	"github.com/njcx/packetbeat8_dpdk/pb"
 	"github.com/njcx/packetbeat8_dpdk/procs"
 	"github.com/njcx/packetbeat8_dpdk/protos"

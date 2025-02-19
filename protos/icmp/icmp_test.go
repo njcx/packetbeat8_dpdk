@@ -27,7 +27,7 @@ import (
 	"github.com/njcx/gopacket131_dpdk"
 	"github.com/njcx/gopacket131_dpdk/layers"
 
-	"github.com/njcx/libbeat_v7/beat"
+	"github.com/njcx/libbeat_v8/beat"
 	conf "github.com/elastic/elastic-agent-libs/config"
 	"github.com/elastic/elastic-agent-libs/logp"
 

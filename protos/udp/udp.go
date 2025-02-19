@@ -26,8 +26,8 @@ import (
 
 	"github.com/rcrowley/go-metrics"
 
-	"github.com/njcx/libbeat_v7/common"
-	"github.com/njcx/libbeat_v7/monitoring/inputmon"
+	"github.com/njcx/libbeat_v8/common"
+	"github.com/njcx/libbeat_v8/monitoring/inputmon"
 	"github.com/elastic/elastic-agent-libs/logp"
 	"github.com/elastic/elastic-agent-libs/monitoring"
 	"github.com/elastic/elastic-agent-libs/monitoring/adapter"

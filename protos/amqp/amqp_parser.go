@@ -21,7 +21,7 @@ import (
 	"encoding/binary"
 	"time"
 
-	"github.com/njcx/libbeat_v7/common"
+	"github.com/njcx/libbeat_v8/common"
 	"github.com/elastic/elastic-agent-libs/logp"
 	"github.com/elastic/elastic-agent-libs/mapstr"
 )

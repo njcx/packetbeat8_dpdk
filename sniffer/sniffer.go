@@ -36,7 +36,7 @@ import (
 	"golang.org/x/sync/errgroup"
 
 	"github.com/elastic/elastic-agent-libs/logp"
-	"github.com/njcx/libbeat_v7/common/atomic"
+	"github.com/njcx/libbeat_v8/common/atomic"
 
 	"github.com/njcx/packetbeat8_dpdk/config"
 	"github.com/njcx/packetbeat8_dpdk/decoder"

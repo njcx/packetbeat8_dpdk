@@ -22,12 +22,12 @@ import (
 
 	"github.com/spf13/pflag"
 
-	"github.com/njcx/libbeat_v7/cfgfile"
-	cmd "github.com/njcx/libbeat_v7/cmd"
-	"github.com/njcx/libbeat_v7/cmd/instance"
-	"github.com/njcx/libbeat_v7/ecs"
-	"github.com/njcx/libbeat_v7/processors"
-	"github.com/njcx/libbeat_v7/publisher/processing"
+	"github.com/njcx/libbeat_v8/cfgfile"
+	cmd "github.com/njcx/libbeat_v8/cmd"
+	"github.com/njcx/libbeat_v8/cmd/instance"
+	"github.com/njcx/libbeat_v8/ecs"
+	"github.com/njcx/libbeat_v8/processors"
+	"github.com/njcx/libbeat_v8/publisher/processing"
 	"github.com/njcx/packetbeat8_dpdk/beater"
 	"github.com/njcx/packetbeat8_dpdk/include"
 	"github.com/elastic/elastic-agent-libs/mapstr"

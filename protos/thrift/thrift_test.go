@@ -24,7 +24,7 @@ import (
 	"net"
 	"testing"
 
-	"github.com/njcx/libbeat_v7/common"
+	"github.com/njcx/libbeat_v8/common"
 	"github.com/njcx/packetbeat8_dpdk/procs"
 	"github.com/njcx/packetbeat8_dpdk/protos"
 	"github.com/elastic/elastic-agent-libs/logp"

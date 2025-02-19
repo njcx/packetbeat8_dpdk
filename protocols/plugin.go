@@ -20,7 +20,7 @@ package protocols
 import (
 	"errors"
 
-	"github.com/njcx/libbeat_v7/plugin"
+	"github.com/njcx/libbeat_v8/plugin"
 	"github.com/njcx/packetbeat8_dpdk/protos"
 )
 

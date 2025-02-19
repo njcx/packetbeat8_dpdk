@@ -28,9 +28,9 @@ import (
 
 	"github.com/elastic/elastic-agent-libs/logp"
 	"github.com/joeshaw/multierror"
-	"github.com/njcx/libbeat_v7/beat"
-	"github.com/njcx/libbeat_v7/esleg/eslegclient"
-	"github.com/njcx/libbeat_v7/fileset"
+	"github.com/njcx/libbeat_v8/beat"
+	"github.com/njcx/libbeat_v8/esleg/eslegclient"
+	"github.com/njcx/libbeat_v8/fileset"
 )
 
 // PipelinesFS is used from the x-pack/packetbeat code to inject modules. The

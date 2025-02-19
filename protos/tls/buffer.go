@@ -20,7 +20,7 @@ package tls
 import (
 	"fmt"
 
-	"github.com/njcx/libbeat_v7/common/streambuf"
+	"github.com/njcx/libbeat_v8/common/streambuf"
 )
 
 type bufferView struct {

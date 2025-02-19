@@ -20,9 +20,9 @@ package beater
 import (
 	"fmt"
 
-	"github.com/njcx/libbeat_v7/beat"
-	"github.com/njcx/libbeat_v7/cfgfile"
-	"github.com/njcx/libbeat_v7/common/reload"
+	"github.com/njcx/libbeat_v8/beat"
+	"github.com/njcx/libbeat_v8/cfgfile"
+	"github.com/njcx/libbeat_v8/common/reload"
 )
 
 type reloader struct {

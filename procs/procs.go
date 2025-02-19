@@ -23,7 +23,7 @@ import (
 	"sync"
 	"time"
 
-	"github.com/njcx/libbeat_v7/common"
+	"github.com/njcx/libbeat_v8/common"
 	"github.com/njcx/packetbeat8_dpdk/protos/applayer"
 	"github.com/elastic/elastic-agent-libs/logp"
 	"github.com/elastic/go-sysinfo"

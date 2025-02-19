@@ -24,11 +24,11 @@ import (
 	"strings"
 	"time"
 
-	"github.com/njcx/libbeat_v7/beat"
-	"github.com/njcx/libbeat_v7/common"
-	"github.com/njcx/libbeat_v7/common/flowhash"
-	"github.com/njcx/libbeat_v7/conditions"
-	"github.com/njcx/libbeat_v7/ecs"
+	"github.com/njcx/libbeat_v8/beat"
+	"github.com/njcx/libbeat_v8/common"
+	"github.com/njcx/libbeat_v8/common/flowhash"
+	"github.com/njcx/libbeat_v8/conditions"
+	"github.com/njcx/libbeat_v8/ecs"
 	"github.com/elastic/elastic-agent-libs/mapstr"
 )
 

@@ -26,7 +26,7 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"github.com/njcx/libbeat_v7/beat"
+	"github.com/njcx/libbeat_v8/beat"
 	"github.com/njcx/packetbeat8_dpdk/config"
 	"github.com/njcx/packetbeat8_dpdk/procs"
 	"github.com/elastic/elastic-agent-libs/logp"

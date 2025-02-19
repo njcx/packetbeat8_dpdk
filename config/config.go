@@ -24,7 +24,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/njcx/libbeat_v7/processors"
+	"github.com/njcx/libbeat_v8/processors"
 	"github.com/njcx/packetbeat8_dpdk/procs"
 	conf "github.com/elastic/elastic-agent-libs/config"
 	"github.com/elastic/elastic-agent-libs/mapstr"

@@ -18,7 +18,7 @@
 package add_kubernetes_metadata
 
 import (
-	kubernetes "github.com/njcx/libbeat_v7/processors/add_kubernetes_metadata"
+	kubernetes "github.com/njcx/libbeat_v8/processors/add_kubernetes_metadata"
 	conf "github.com/elastic/elastic-agent-libs/config"
 )
 

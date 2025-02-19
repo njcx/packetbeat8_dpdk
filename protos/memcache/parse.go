@@ -22,7 +22,7 @@ package memcache
 import (
 	"time"
 
-	"github.com/njcx/libbeat_v7/common/streambuf"
+	"github.com/njcx/libbeat_v8/common/streambuf"
 )
 
 type parserConfig struct {

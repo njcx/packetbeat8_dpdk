@@ -24,10 +24,10 @@ import (
 
 	"github.com/mitchellh/hashstructure"
 
-	"github.com/njcx/libbeat_v7/beat"
-	"github.com/njcx/libbeat_v7/cfgfile"
-	"github.com/njcx/libbeat_v7/processors"
-	"github.com/njcx/libbeat_v7/publisher/pipeline"
+	"github.com/njcx/libbeat_v8/beat"
+	"github.com/njcx/libbeat_v8/cfgfile"
+	"github.com/njcx/libbeat_v8/processors"
+	"github.com/njcx/libbeat_v8/publisher/pipeline"
 	"github.com/elastic/elastic-agent-libs/logp"
 	"github.com/elastic/elastic-agent-libs/mapstr"
 

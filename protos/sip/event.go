@@ -18,7 +18,7 @@
 package sip
 
 import (
-	"github.com/njcx/libbeat_v7/common"
+	"github.com/njcx/libbeat_v8/common"
 )
 
 // ProtocolFields contains SIP fields.

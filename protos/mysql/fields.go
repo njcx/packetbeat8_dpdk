@@ -20,7 +20,7 @@
 package mysql
 
 import (
-	"github.com/njcx/libbeat_v7/asset"
+	"github.com/njcx/libbeat_v8/asset"
 )
 
 func init() {

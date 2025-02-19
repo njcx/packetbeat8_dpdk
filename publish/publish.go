@@ -21,9 +21,9 @@ import (
 	"errors"
 	"net"
 
-	"github.com/njcx/libbeat_v7/beat"
-	"github.com/njcx/libbeat_v7/common"
-	"github.com/njcx/libbeat_v7/processors"
+	"github.com/njcx/libbeat_v8/beat"
+	"github.com/njcx/libbeat_v8/common"
+	"github.com/njcx/libbeat_v8/processors"
 	"github.com/njcx/packetbeat8_dpdk/pb"
 	conf "github.com/elastic/elastic-agent-libs/config"
 	"github.com/elastic/elastic-agent-libs/logp"

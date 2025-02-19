@@ -20,8 +20,8 @@ package cassandra
 import (
 	"time"
 
-	"github.com/njcx/libbeat_v7/beat"
-	"github.com/njcx/libbeat_v7/common"
+	"github.com/njcx/libbeat_v8/beat"
+	"github.com/njcx/libbeat_v8/common"
 	"github.com/elastic/elastic-agent-libs/mapstr"
 
 	"github.com/njcx/packetbeat8_dpdk/pb"

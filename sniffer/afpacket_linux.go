@@ -31,7 +31,7 @@ import (
 	"github.com/njcx/gopacket131_dpdk/pcap"
 	"golang.org/x/net/bpf"
 
-	"github.com/njcx/libbeat_v7/monitoring/inputmon"
+	"github.com/njcx/libbeat_v8/monitoring/inputmon"
 	"github.com/elastic/elastic-agent-libs/logp"
 	"github.com/elastic/elastic-agent-libs/monitoring"
 )

@@ -21,7 +21,7 @@ import (
 	"errors"
 	"time"
 
-	"github.com/njcx/libbeat_v7/common/streambuf"
+	"github.com/njcx/libbeat_v8/common/streambuf"
 	"github.com/njcx/packetbeat8_dpdk/protos/applayer"
 	"github.com/elastic/elastic-agent-libs/logp"
 

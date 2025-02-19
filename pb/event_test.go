@@ -25,7 +25,7 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"github.com/njcx/libbeat_v7/ecs"
+	"github.com/njcx/libbeat_v8/ecs"
 	"github.com/elastic/elastic-agent-libs/mapstr"
 )
 

@@ -21,7 +21,7 @@ package memcache
 // binary/text protocol based commands with setters and serializers.
 
 import (
-	"github.com/njcx/libbeat_v7/common/streambuf"
+	"github.com/njcx/libbeat_v8/common/streambuf"
 	"github.com/elastic/elastic-agent-libs/mapstr"
 )
 

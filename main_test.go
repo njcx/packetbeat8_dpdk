@@ -23,8 +23,8 @@ import (
 	"flag"
 	"testing"
 
-	"github.com/njcx/libbeat_v7/cfgfile"
-	"github.com/njcx/libbeat_v7/tests/system/template"
+	"github.com/njcx/libbeat_v8/cfgfile"
+	"github.com/njcx/libbeat_v8/tests/system/template"
 	"github.com/njcx/packetbeat8_dpdk/cmd"
 )
 
