@@ -24,10 +24,10 @@ import (
 	"strings"
 	"time"
 
-	"github.com/njcx/libbeat_v8/processors"
-	"github.com/njcx/packetbeat8_dpdk/procs"
 	conf "github.com/elastic/elastic-agent-libs/config"
 	"github.com/elastic/elastic-agent-libs/mapstr"
+	"github.com/njcx/libbeat_v8/processors"
+	"github.com/njcx/packetbeat8_dpdk/procs"
 )
 
 var errFanoutGroupAFPacketOnly = errors.New("fanout_group is only valid with af_packet type")
@@ -128,6 +128,7 @@ type InterfaceConfig struct {
 	BufferSizeMb          int           `config:"buffer_size_mb"`
 	EnableAutoPromiscMode bool          `config:"auto_promisc_mode"`
 	InternalNetworks      []string      `config:"internal_networks"`
+	DpdkOptions           []string      `config:"dpdk_options"`
 	FanoutGroup           *uint16       `config:"fanout_group"` // Fanout group ID for AF_PACKET.
 	TopSpeed              bool
 	Dumpfile              string // Dumpfile is the basename of pcap dumpfiles. The file names will have a creation time stamp and .pcap extension appended.

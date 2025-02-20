@@ -478,15 +478,15 @@ func (s *sniffer) open(device string) (snifferHandle, error) {
 		return openAFPacket(fmt.Sprintf("%s_%d", s.id, s.idx), device, s.filter, &s.config)
 
 	case "dpdk":
-		return openDpdk(device, s.filter)
+		return openDpdk(device, s.filter, &s.config)
 	default:
 		return nil, fmt.Errorf("unknown sniffer type for %s: %q", device, s.config.Type)
 	}
 }
 
-func openDpdk(device, filter string) (snifferHandle, error) {
+func openDpdk(device, filter string, cfg *config.InterfaceConfig) (snifferHandle, error) {
 
-	err := dpdk.InitDPDK()
+	err := dpdk.InitDPDK(cfg.DpdkOptions)
 	if err != nil {
 		return nil, err
 	}
