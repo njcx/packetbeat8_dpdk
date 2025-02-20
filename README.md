@@ -44,6 +44,7 @@ Debian + Ubuntu
 #  cd dpdk-kmods && make
 #  modprobe uio  &&  insmod igb_uio.ko
 #  /xxx/dpdk-stable-20.11.10/usertools/dpdk-devbind.py -b igb_uio 0000:03:00.0(pci-)
+#  go clean -modcache && go mod tidy
 #  CGO_CFLAGS="-msse4.2 -fno-strict-aliasing " CGO_LDFLAGS=" -lrte_eal -lrte_mbuf -lrte_mempool -lrte_ethdev -lpcap" go build
 
 
