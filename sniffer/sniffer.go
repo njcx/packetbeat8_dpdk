@@ -21,15 +21,14 @@ import (
 	"context"
 	"encoding/json"
 	"fmt"
+	"github.com/njcx/packetbeat8_dpdk/dpdkinit"
 	"io"
 	"os"
 	"runtime"
-	"strconv"
 	"strings"
 	"time"
 
 	"github.com/njcx/gopacket131_dpdk"
-	"github.com/njcx/gopacket131_dpdk/dpdk"
 	"github.com/njcx/gopacket131_dpdk/layers"
 	"github.com/njcx/gopacket131_dpdk/pcap"
 	"github.com/njcx/gopacket131_dpdk/pcapgo"
@@ -478,29 +477,20 @@ func (s *sniffer) open(device string) (snifferHandle, error) {
 		return openAFPacket(fmt.Sprintf("%s_%d", s.id, s.idx), device, s.filter, &s.config)
 
 	case "dpdk":
-		return openDpdk(device, s.filter, &s.config)
+		return openDpdk(s.filter)
 	default:
 		return nil, fmt.Errorf("unknown sniffer type for %s: %q", device, s.config.Type)
 	}
 }
 
-func openDpdk(device, filter string, cfg *config.InterfaceConfig) (snifferHandle, error) {
+func openDpdk(filter string) (snifferHandle, error) {
 
-	err := dpdk.InitDPDK(cfg.DpdkOptions)
-	if err != nil {
-		return nil, err
-	}
-
-	num16, _ := strconv.ParseUint(device, 10, 16)
-	port := uint16(num16)
-
-	h, err := dpdk.NewDPDKHandle(port, filter)
-
+	h := dpdkinit.DPdk
+	err := h.SetBPFFilter(filter)
 	if err != nil {
 		h.Close()
 		return nil, err
 	}
-
 	return h, nil
 }
 
