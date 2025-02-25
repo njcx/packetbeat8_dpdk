@@ -24,14 +24,14 @@ import (
 	"sync"
 	"time"
 
+	conf "github.com/elastic/elastic-agent-libs/config"
+	"github.com/elastic/elastic-agent-libs/logp"
+	"github.com/elastic/elastic-agent-libs/service"
 	"github.com/njcx/libbeat_v8/beat"
 	"github.com/njcx/libbeat_v8/esleg/eslegclient"
 	"github.com/njcx/libbeat_v8/management"
 	"github.com/njcx/libbeat_v8/monitoring/inputmon"
 	"github.com/njcx/libbeat_v8/outputs/elasticsearch"
-	conf "github.com/elastic/elastic-agent-libs/config"
-	"github.com/elastic/elastic-agent-libs/logp"
-	"github.com/elastic/elastic-agent-libs/service"
 
 	"github.com/njcx/packetbeat8_dpdk/config"
 	"github.com/njcx/packetbeat8_dpdk/module"
@@ -52,6 +52,9 @@ import (
 var maxSniffers = 100
 
 type flags struct {
+	dpdkPort   *string
+	dpdkStatus *string
+
 	file       *string
 	loop       *int
 	oneAtAtime *bool
@@ -60,6 +63,8 @@ type flags struct {
 }
 
 var cmdLineArgs = flags{
+	dpdkStatus: flag.String("dpdk_status", "", "Set dpdk status,  enable, disable or nil"),
+	dpdkPort:   flag.String("dpdk_port", "", "Set dpdk port"),
 	file:       flag.String("I", "", "Read packet data from specified file"),
 	loop:       flag.Int("l", 1, "Loop file. 0 - loop forever"),
 	oneAtAtime: flag.Bool("O", false, "Read packets one at a time (press Enter)"),

@@ -22,6 +22,7 @@ import (
 
 	"github.com/spf13/pflag"
 
+	"github.com/elastic/elastic-agent-libs/mapstr"
 	"github.com/njcx/libbeat_v8/cfgfile"
 	cmd "github.com/njcx/libbeat_v8/cmd"
 	"github.com/njcx/libbeat_v8/cmd/instance"
@@ -30,7 +31,6 @@ import (
 	"github.com/njcx/libbeat_v8/publisher/processing"
 	"github.com/njcx/packetbeat8_dpdk/beater"
 	"github.com/njcx/packetbeat8_dpdk/include"
-	"github.com/elastic/elastic-agent-libs/mapstr"
 )
 
 const (
@@ -61,6 +61,11 @@ func PacketbeatSettings(globals processors.PluginConfig) instance.Settings {
 	cfgfile.AddAllowedBackwardsCompatibleFlag("l")
 	runFlags.AddGoFlag(flag.CommandLine.Lookup("dump"))
 	cfgfile.AddAllowedBackwardsCompatibleFlag("dump")
+
+	runFlags.AddGoFlag(flag.CommandLine.Lookup("dpdk_status"))
+	runFlags.AddGoFlag(flag.CommandLine.Lookup("dpdk_port"))
+	cfgfile.AddAllowedBackwardsCompatibleFlag("dpdk_status")
+	cfgfile.AddAllowedBackwardsCompatibleFlag("dpdk_port")
 
 	return instance.Settings{
 		RunFlags:       runFlags,
