@@ -18,6 +18,7 @@
 package main
 
 import (
+	"github.com/njcx/packetbeat8_dpdk/dpdkinit"
 	"os"
 	_ "time/tzdata" // for timezone handling
 
@@ -26,6 +27,8 @@ import (
 
 // Setups and Runs Packetbeat
 func main() {
+
+	dpdkinit.DpdkInit()
 	if err := cmd.RootCmd.Execute(); err != nil {
 		os.Exit(1)
 	}

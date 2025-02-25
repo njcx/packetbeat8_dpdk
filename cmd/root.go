@@ -63,8 +63,8 @@ func PacketbeatSettings(globals processors.PluginConfig) instance.Settings {
 	cfgfile.AddAllowedBackwardsCompatibleFlag("dump")
 
 	runFlags.AddGoFlag(flag.CommandLine.Lookup("dpdk_status"))
-	runFlags.AddGoFlag(flag.CommandLine.Lookup("dpdk_port"))
 	cfgfile.AddAllowedBackwardsCompatibleFlag("dpdk_status")
+	runFlags.AddGoFlag(flag.CommandLine.Lookup("dpdk_port"))
 	cfgfile.AddAllowedBackwardsCompatibleFlag("dpdk_port")
 
 	return instance.Settings{

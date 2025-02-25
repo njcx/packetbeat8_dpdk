@@ -50,3 +50,4 @@ Debian + Ubuntu
 
 ```
 
+![示例](img.png)
