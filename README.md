@@ -46,7 +46,7 @@ Debian + Ubuntu
 #  dpdk-devbind.py -b igb_uio 0000:03:00.0(pci-addr)
 #  go clean -modcache && go mod tidy
 #  CGO_CFLAGS="-msse4.2 -fno-strict-aliasing " CGO_LDFLAGS=" -lrte_eal -lrte_mbuf -lrte_mempool -lrte_ethdev -lpcap" go build
-#  ./packetbeat8_dpdk --dpdk_status enable --dpdk_port 0 -c ~/go/packetbeat.dpdk.yml
+#  ./packetbeat8_dpdk --dpdk_status enable --dpdk_port 0 -c packetbeat.dpdk.yml
 
 ```
 

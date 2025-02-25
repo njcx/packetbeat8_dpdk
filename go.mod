@@ -16,9 +16,6 @@ require (
         github.com/magefile/mage v1.15.0
         github.com/miekg/dns v1.1.63
         github.com/mitchellh/hashstructure v1.1.0
-        github.com/njcx/gopacket131_dpdk v0.0.0-20250217105054-d2c73c0aef2a
-        github.com/njcx/libbeat_v8 v0.0.0-20250219084010-03aac8b7ec18
-        github.com/njcx/packetbeat8_dpdk v0.0.0-20250219091140-1908d0ed8945
         github.com/rcrowley/go-metrics v0.0.0-20201227073835-cf1acfcdf475
         github.com/samuel/go-thrift v0.0.0-20140522043831-2187045faa54
         github.com/spf13/cobra v1.9.1
